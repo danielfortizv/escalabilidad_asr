@@ -4,11 +4,15 @@
     <title>Exámenes MRI</title>
 </head>
 <body>
-    <h1>Lista de Exámenes MRI</h1>
+    <h1>Exámenes MRI para Paciente {{ paciente_id }}</h1>
     <ul>
         {% for examen in examenes %}
-            <li>{{ examen.paciente }} - {{ examen.fecha }}</li>
+            <li>
+                <a href="{% url 'ver_mri' paciente_id examen.id %}">{{ examen.archivo }}</a>
+            </li>
         {% endfor %}
     </ul>
+    
+    
 </body>
 </html>

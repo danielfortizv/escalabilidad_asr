@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ASR de Escalabilidad</title>
+    <title>Lista de Pacientes</title>
 </head>
 <body>
-    <h1>Bienvenido al sistema de Escalabilidad ASR</h1>
+    <h1>Pacientes</h1>
     <ul>
-        <li><a href="{% url 'escalabilidad' %}">Ver Eventos</a></li>
-        <li><a href="{% url 'obtener_eventos' %}">Ver Todos los Eventos</a></li>
-        <li><a href="{% url 'obtener_examenes_mri' td='CC' cedula='12345678' %}">Consultar Examen MRI por Cedula</a></li>
+        {% for paciente in pacientes %}
+            <li><a href="{% url 'perfil_paciente' paciente.cedula %}">{{ paciente.nombre }}</a></li>
+        {% endfor %}
     </ul>
 </body>
 </html>

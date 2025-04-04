@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Visualización de MRI</title>
+    <title>Exámenes MRI</title>
 </head>
 <body>
-    <h1>Visualización de Examen MRI</h1>
-    <img src="{% url 'detalle_examen_mri' sujeto_id='00001' %}" alt="Examen MRI">
+    <h1>Exámenes MRI para Paciente {{ paciente_id }}</h1>
+    <ul>
+        {% for examen in examenes %}
+            <li>
+                <a href="{% url 'ver_mri' paciente_id examen.id %}">{{ examen.archivo }}</a>
+            </li>
+        {% endfor %}
+    </ul>    
 </body>
 </html>
