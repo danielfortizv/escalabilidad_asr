@@ -5,6 +5,10 @@
 </head>
 <body>
     <h1>Bienvenido al sistema de Escalabilidad ASR</h1>
-    <a href="{% url 'escalabilidad' %}">Ver exámenes MRI</a>
+    <ul>
+        <li><a href="{% url 'escalabilidad' %}">Ver Eventos</a></li>
+        <li><a href="{% url 'obtener_eventos' %}">Ver Todos los Eventos</a></li>
+        <li><a href="{% url 'obtener_examenes_mri' td='CC' cedula='12345678' %}">Consultar Examen MRI por Cedula</a></li>
+    </ul>
 </body>
 </html>
