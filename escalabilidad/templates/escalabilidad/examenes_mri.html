@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exámenes MRI</title>
+</head>
+<body>
+    <h1>Lista de Exámenes MRI</h1>
+    <ul>
+        {% for examen in examenes %}
+            <li>{{ examen.paciente }} - {{ examen.fecha }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

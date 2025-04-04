@@ -6,8 +6,6 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
         }
         .container {
             width: 80%;
@@ -15,7 +13,6 @@
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
@@ -37,11 +34,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Exámenes MRI Consultados (Escalabilidad)</h1>
+        <h1>Eventos Cargados desde el Backend</h1>
         <ul>
-            {% for examen in examenes %}
-                <li>{{ examen }}</li>
-            {% endfor %}
+            {% if eventos %}
+                {% for evento in eventos %}
+                    <li>ID: {{ evento.id }} - Nombre: {{ evento.nombre }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No se encontraron eventos o hay un error en la conexión.</li>
+            {% endif %}
         </ul>
     </div>
 </body>
